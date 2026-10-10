@@ -1,0 +1,23 @@
+import java.util.Scanner; //Importa Scanner para leer datos del teclado
+/**
+ *Programa que simula una sesion con un psicologo, solicita el nombre y problema del paciente
+ *y muestra las respuestas del psicologo.
+ *
+ * @author Alexander Perez Laguna 
+ * @version 1a edición
+ */
+  public class Psicologo{
+      public static void main (String [] pps){
+	  Scanner in = new Scanner(System.in);  //crea el lector del teclado
+	  String Nombre, Problema;   //guardan el nombre y el problema
+	  System.out.println("Bienvenido, ¿Cuál es su nombre?");  //pide el nombre
+	  Nombre = in.nextLine();  //lee la linea y la guarda en la variable Nombre
+	  System.out.println("Buenas tardes " + Nombre +", ¿Cuál es su problema en la vida?");  //saluda por su nombre y pregunta el problema  
+	  Problema = in.nextLine();  //lee el problema y lo guarda en la variable Problema
+	  System.out.println("MMM... ya veo");
+	  System.out.println("Y digame..."); //respuesta del psicologo
+	  System.out.println("Por qué dice " + Problema + "?");  //repite el problema como pregunta
+	  in.nextLine();  // Espera la respuesta del paciente pero no la guarda
+	  System.out.println("Muy interesante!! Hablaremos de ello con más detalle en la siguiente sesión");  //mensaje de despedida
+      }
+}

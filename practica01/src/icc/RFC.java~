@@ -1,0 +1,35 @@
+import java.util.Scanner; // Importa Scanner para leer datos del teclado
+/**
+ *Programa que obtiene el RFC de una persona a partir de su nombre completo 
+ *y su fecha de nacimiento
+ *
+ * @author Alexander Perez Laguna
+ * @version 2a edición
+ */
+public class RFC{
+    public static void main(String [] pps){
+	Scanner in = new Scanner(System.in);  //crea el lector de teclado
+	String nombreCom , Fecha;  // Guarda el nombre completo y la fecha
+	System.out.println("¿Cual es tu nombre completo?( En caso de contar con dos nombres solo escribe uno)");
+	nombreCom = in.nextLine();  //pide y lee el nombre completo y lo guarda en la variable nombreCom
+	System.out.println("Ingresa la fecha de nacimiento en formato dd/mm/aa");
+	Fecha = in.nextLine(); //pide y lee la fecha de nacimiento y la guarda en la variable Fecha
+	String[] partes = nombreCom.split(" "); //separa el nombre completo en palabras usando el espacio
+	String nombre = partes[0]; //primera palabra nombre
+	String paterno = partes[1];  //segunda palabra apellido paterno 
+	String materno = partes[2];  //tercera palabra apellido materno
+	//Toma las dos primeras letras del apellido paterno + inicial del materno + inicial del nombre 
+	String letras = paterno.substring(0, 2)
+	    + materno.charAt(0)
+	    + nombre.charAt(0);
+	//Separa la fecha en partes  el / como separador 
+	String[] partesFecha = Fecha.split("/");
+	String dia = partesFecha[0];
+	String mes = partesFecha[1];
+	String año= partesFecha[2];
+	//Forma el RFC: Las letras en mayuscula + año + mes + dia
+	String rfc = letras.toUpperCase() + año + mes + dia;
+	//Muestra el resultado
+	System.out.println("El RFC de " + nombreCom + " es: " + rfc);
+    }
+}
